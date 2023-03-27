@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: shoppingcart
-        image: shafiq53/shoppingcart:1
+        image: shafiq53/shoppingcart:4
         imagePullPolicy: Always
         ports:
         - containerPort: 8082
