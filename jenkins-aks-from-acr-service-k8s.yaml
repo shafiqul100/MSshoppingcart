@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: shoppingcart
+    k8s-app: shoppingcart
+  name: shoppingcartapp
+  namespace: ingress-nginx
+spec:
+  ports:
+  - name: http
+    port: 8082
+    protocol: TCP
+    targetPort: 8082
+  selector:
+    app: shoppingcart
+  type: LoadBalancer

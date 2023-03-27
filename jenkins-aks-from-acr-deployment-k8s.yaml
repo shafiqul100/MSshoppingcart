@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shoppingcart
+  namespace: ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shoppingcart
+  template:
+    metadata:
+      labels:
+        app: shoppingcart
+    spec:
+      containers:
+      - name: shoppingcart
+        image: shafiq53/shoppingcart:1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8082
